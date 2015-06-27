@@ -1,0 +1,53 @@
+The following notes are from the first couple of vids:
+
+Some getting started tips:
+:ring {:handler your-projectexample-handler
+       :init your-project/on-init
+       :destroy your-project/on-destory}
+
+;;alway look at updates for
+:plugins [ring "0...."]
+
+The follwing is the minimum needed in starting a
+clojure project.
+ :dependencies [[org.clojure/clojure "1.6.0"]
+                 [ring "1.2.0"]]
+  :plugins [[lein-ring "0.8.7"]]
+  :ring {:handler project1.core/example-handler
+         :init    project1.core/on-init
+         :destroy project1.core/on-destroy})
+
+SUMMARY OF SECTION 7 - RESPONSE MAPS
+:uri
+:host
+:headlers
+:remote-addr
+:body
+* Other information such as sessions, cookies or REQUEST/GET paramters can be extracted using that data
+SECTION 8 SUMMARY -RESPONSE MAP
+
+1) Creating a text file from the command line:
+echo 'Hello Clojure File!' >test.txt
+;;and then we can call it with:
+(defn example-handler[request]
+      {:body (java.io.File. "test.txt")}
+
+We can also use CURL to display the whole HTTP communication
+curl -v http://localhost:4001
+
+In the last part of this video, we provide a :status 300 for redirection
+to WEBSITE, in this case "http://github.com/ring-clojure/ring"
+Headers can be returned to ring; here we use the  map of headers keys as keys
+and values as values.
+You can also use headers to set the content-type, cookies, and so on. 
+(defn example-handler[req]
+      {:headers {"location" "http://trekradio.com"
+      	         "Set-cookie" "test=1"}
+       :status 301})
+
+SUMMARY - ROUTING 9
+Here we discuss how clojure handles routings
+SUMMARY OF SECTION ONE OF VIDEOS
+Request and responses in ring are just Clojure Maps and they can be
+manipulated with all means provied by clojure.
+

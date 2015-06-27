@@ -1,0 +1,11 @@
+(ns project1.core)
+
+
+(defn example-handler [request]
+  {:body "Hello Clojure and Java its relaoded!"})
+
+(defn on-init[]
+  (println "Initializing your lovely app"))
+
+(defn on-destroy[]
+  (println "destorying your app"))

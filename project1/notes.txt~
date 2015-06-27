@@ -1,0 +1,18 @@
+The following notes are from the first couple of vids:
+
+Some getting started tips:
+:ring {:handler your-projectexample-handler
+       :init your-project/on-init
+       :destroy your-project/on-destory}
+
+;;alway look at updates for
+:plugins [ring "0...."]
+
+The follwing is the minimum needed in starting a
+clojure project.
+ :dependencies [[org.clojure/clojure "1.6.0"]
+                 [ring "1.2.0"]]
+  :plugins [[lein-ring "0.8.7"]]
+  :ring {:handler project1.core/example-handler
+         :init    project1.core/on-init
+         :destroy project1.core/on-destroy})

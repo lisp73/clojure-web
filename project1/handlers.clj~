@@ -1,0 +1,6 @@
+(ns project1.handlers)
+
+;;here you can define handlers without having to restart because we can
+                                        ;just add it the route-handler
+(defn handler3[request]
+  {:body "This is a project1.handlers/handlers3 function!"})

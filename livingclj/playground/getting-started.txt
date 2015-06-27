@@ -1,0 +1,10 @@
+
+When using lein build and want to start a web application, do the follwoing.
+Under dependencies, add the following code. 
+
+(.  .  . :dependencies [[org.clojure/clojure "1.6.0"]
+                 [ring "1.4.0-RC1"]]
+  :plugins [[lein-ring "0.9.6"]]
+  :ring {:handler project1.core/example-handler
+         :init    project1.core/on-init
+         :destroy project1.core/on-destroy})
